@@ -20,11 +20,11 @@
 		4203E2AC1558C5E60015EC11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4203E2AE1558C5E60015EC11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4203E2B01558C5E60015EC11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4203E2B41558C5E60015EC11 /* May10-Info.plist */ = {isa = PBXFileReference; path = "May10-Info.plist"; sourceTree = "<group>"; };
+		4203E2B41558C5E60015EC11 /* May10-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "May10-Info.plist"; sourceTree = "<group>"; };
 		4203E2B61558C5E60015EC11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4203E2B81558C5E60015EC11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4203E2BA1558C5E60015EC11 /* May10-Prefix.pch */ = {isa = PBXFileReference; path = "May10-Prefix.pch"; sourceTree = "<group>"; };
-		4203E2BB1558C5E60015EC11 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		4203E2BA1558C5E60015EC11 /* May10-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "May10-Prefix.pch"; sourceTree = "<group>"; };
+		4203E2BB1558C5E60015EC11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4203E2BC1558C5E60015EC11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,7 +223,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "May10/May10-Prefix.pch";
 				INFOPLIST_FILE = "May10/May10-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -234,7 +236,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "May10/May10-Prefix.pch";
 				INFOPLIST_FILE = "May10/May10-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -258,6 +262,7 @@
 				4203E2C21558C5E60015EC11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
