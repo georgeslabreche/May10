@@ -13,6 +13,9 @@
 		4203E2B71558C5E60015EC11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4203E2B51558C5E60015EC11 /* InfoPlist.strings */; };
 		4203E2B91558C5E60015EC11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E2B81558C5E60015EC11 /* main.m */; };
 		4203E2BD1558C5E60015EC11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E2BC1558C5E60015EC11 /* AppDelegate.m */; };
+		42B459BB155A11D600282EFE /* VultureFeedSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459BA155A11D600282EFE /* VultureFeedSplitViewController.m */; };
+		42B459BE155A13CD00282EFE /* FeedMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459BD155A13CD00282EFE /* FeedMenuViewController.m */; };
+		42B459C4155A1BA700282EFE /* FeedContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459C3155A1BA700282EFE /* FeedContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		4203E2BA1558C5E60015EC11 /* May10-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "May10-Prefix.pch"; sourceTree = "<group>"; };
 		4203E2BB1558C5E60015EC11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4203E2BC1558C5E60015EC11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42B459B9155A11D600282EFE /* VultureFeedSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VultureFeedSplitViewController.h; sourceTree = "<group>"; };
+		42B459BA155A11D600282EFE /* VultureFeedSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VultureFeedSplitViewController.m; sourceTree = "<group>"; };
+		42B459BC155A13CD00282EFE /* FeedMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedMenuViewController.h; sourceTree = "<group>"; };
+		42B459BD155A13CD00282EFE /* FeedMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedMenuViewController.m; sourceTree = "<group>"; };
+		42B459C2155A1BA700282EFE /* FeedContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedContentViewController.h; sourceTree = "<group>"; };
+		42B459C3155A1BA700282EFE /* FeedContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,12 @@
 				4203E2BB1558C5E60015EC11 /* AppDelegate.h */,
 				4203E2BC1558C5E60015EC11 /* AppDelegate.m */,
 				4203E2B31558C5E60015EC11 /* Supporting Files */,
+				42B459B9155A11D600282EFE /* VultureFeedSplitViewController.h */,
+				42B459BA155A11D600282EFE /* VultureFeedSplitViewController.m */,
+				42B459BC155A13CD00282EFE /* FeedMenuViewController.h */,
+				42B459BD155A13CD00282EFE /* FeedMenuViewController.m */,
+				42B459C2155A1BA700282EFE /* FeedContentViewController.h */,
+				42B459C3155A1BA700282EFE /* FeedContentViewController.m */,
 			);
 			path = May10;
 			sourceTree = "<group>";
@@ -153,6 +168,9 @@
 			files = (
 				4203E2B91558C5E60015EC11 /* main.m in Sources */,
 				4203E2BD1558C5E60015EC11 /* AppDelegate.m in Sources */,
+				42B459BB155A11D600282EFE /* VultureFeedSplitViewController.m in Sources */,
+				42B459BE155A13CD00282EFE /* FeedMenuViewController.m in Sources */,
+				42B459C4155A1BA700282EFE /* FeedContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +243,7 @@
 				INFOPLIST_FILE = "May10/May10-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -238,7 +256,7 @@
 				INFOPLIST_FILE = "May10/May10-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

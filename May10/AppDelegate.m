@@ -7,17 +7,38 @@
 //
 
 #import "AppDelegate.h"
+#import "VultureFeedSplitViewController.h"
+#import "FeedMenuViewController.h"
+#import "FeedContentViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize vultureFeedSplitViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    // This is the Detail View Controller for the Split View Controller
+    FeedContentViewController *feedContentViewController = [[FeedContentViewController alloc] initWithAllNewsFeeds];
+    
+    
+    // This is the MAster View Controller for the Split View Controller
+    FeedMenuViewController *feedMenuViewController = [[FeedMenuViewController alloc] initWithFeedContentlViewController:feedContentViewController];
+    
+    vultureFeedSplitViewController = [[VultureFeedSplitViewController alloc] init];
+    
+    vultureFeedSplitViewController.viewControllers = [NSArray arrayWithObjects:
+                                           feedMenuViewController,
+                                           feedContentViewController,
+                                           nil
+                                           ];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.window.rootViewController = vultureFeedSplitViewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
