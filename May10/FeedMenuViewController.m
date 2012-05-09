@@ -31,6 +31,7 @@
         feedMenuItems = [NSArray arrayWithObjects:
                          @"All News",
                          @"Movies",
+                         @"TV",
                          @"Music",
                          @"Art, Books...",
                          @"The Industry",
@@ -145,41 +146,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+   
+    // Get delegage. We need to operate on objects in the delegate
+    AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
+    
+    // This array will contain the feed to display
+    NSMutableArray *feeds;
+    
+    // Fetch required feed.
     NSString *selectedFeed = [feedMenuItems objectAtIndex: indexPath.row];
     NSLog(@"Fetch and display %@ feed.", selectedFeed);
-   
-    NSArray *feeds;
-    
     
     if(indexPath.row == 0){
         NSLog(@"Fetch news feed...");
-        //TODO: fetch feed online http://www.vulture.com/rss/index.xml
-        feeds = [NSArray arrayWithObjects:
-                        @"News 1",
-                        @"News 2",
-                        @"News 3",
-                        @"News 4",
-                        nil];
-        
+        feeds = delegate.feedParser.fetchAllNews; 
         
     }else if(indexPath.row == 1){
         NSLog(@"Fetch news feed...");
-        //TODO fetch feed online http://www.vulture.com/rss/index.xml
-        feeds = [NSArray arrayWithObjects:
-                      @"Movie 1",
-                      @"Movie 2",
-                      @"Movie 3",
-                      @"Movie 4",
-                      @"Movie 5",
-                      @"Movie 6",
-                      nil];
+        feeds = delegate.feedParser.fetchMovies;
     }
-    // TODO: fetch the rest of the feed
     else{
-        feeds = [NSArray arrayWithObjects:
-                 @"TODO 1",
-                 @"TODO 2",
-                 nil];
+        feeds = [[NSMutableArray alloc]init];
     }
          
     // Create the new feed content view controller
@@ -188,8 +175,6 @@
     
     
     // Update split view with new content
-    AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
-   
     NSArray *viewControllers = [NSArray arrayWithObjects:
                                                       self,
                                                       nextFeedContentViewController,

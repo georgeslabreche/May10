@@ -7,6 +7,7 @@
 //
 
 #import "FeedContentViewController.h"
+#import "Entry.h"
 
 @interface FeedContentViewController ()
 
@@ -18,42 +19,13 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        /*
-        allNewsFeeds = [NSArray arrayWithObjects:
-                         @"News 1",
-                         @"News 2",
-                         @"News 3",
-                         @"News 4",
-                         nil];
-        
-        movieFeeds = [NSArray arrayWithObjects:
-                        @"Movie 1",
-                        @"Movie 2",
-                        @"Movie 3",
-                        @"Movie 4",
-                        @"Movie 5",
-                        @"Movie 6",
-                        nil];
-         */
+
     }
     return self;
 }
 
-- (id)initWithAllNewsFeeds{
-    self = [super initWithStyle:UITableViewCellStyleDefault];
-    if (self) {
-        vultureFeeds = [NSArray arrayWithObjects:
-                        @"News 1",
-                        @"News 2",
-                        @"News 3",
-                        @"News 4",
-                        nil];
-    }
-    
-    return self;
-}
 
-- (id)initWithFeeds:(NSArray *) feeds{
+- (id)initWithFeeds:(NSMutableArray *) feeds{
     self = [super initWithStyle:UITableViewCellStyleDefault];
     if (self) {
         vultureFeeds = feeds;
@@ -111,7 +83,9 @@
     // Configure the cell...
 	//The .textLabel and .detailTextLabel properties are UILabels.
 	//The .imageView property is a UIImage.
-	cell.textLabel.text = [vultureFeeds objectAtIndex: indexPath.row];
+    Entry *entry = [vultureFeeds objectAtIndex: indexPath.row];
+    
+	cell.textLabel.text = entry.title;
     
     return cell;
 }

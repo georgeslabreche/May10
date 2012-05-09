@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VultureFeedSplitViewController.h"
+#import "FeedParser.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     
@@ -15,5 +16,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property VultureFeedSplitViewController *vultureFeedSplitViewController;
+@property FeedParser *feedParser;
 
 @end

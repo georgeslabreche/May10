@@ -10,17 +10,22 @@
 #import "VultureFeedSplitViewController.h"
 #import "FeedMenuViewController.h"
 #import "FeedContentViewController.h"
+#import "FeedParser.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize vultureFeedSplitViewController;
+@synthesize feedParser;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
+    feedParser = [[FeedParser alloc]init];
+    NSMutableArray *feeds = [feedParser fetchAllNews];
+    
     // This is the Detail View Controller for the Split View Controller
-    FeedContentViewController *feedContentViewController = [[FeedContentViewController alloc] initWithAllNewsFeeds];
+    FeedContentViewController *feedContentViewController = [[FeedContentViewController alloc] initWithFeeds:feeds];
     
     
     // This is the MAster View Controller for the Split View Controller

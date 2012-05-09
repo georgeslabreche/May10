@@ -11,6 +11,5 @@
 @interface FeedContentViewController : UITableViewController{
     NSArray *vultureFeeds;
 }
-- (id)initWithAllNewsFeeds;
-- (id)initWithFeeds:(NSArray *) feeds;
+- (id)initWithFeeds:(NSMutableArray *) feeds;
 @end
