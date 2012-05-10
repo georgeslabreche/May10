@@ -37,7 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    self.tableView.rowHeight = 200;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -86,6 +87,12 @@
     Entry *entry = [vultureFeeds objectAtIndex: indexPath.row];
     
 	cell.textLabel.text = entry.title;
+    
+    if(entry.imageURL != nil){
+        NSData *imageData = [[NSData alloc]initWithContentsOfURL: entry.imageURL];
+        
+        cell.imageView.image = [[UIImage alloc]initWithData:imageData];
+    }
     
     return cell;
 }

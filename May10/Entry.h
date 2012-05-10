@@ -15,5 +15,6 @@
 @property NSMutableArray* contentArray;
 @property NSString* link;
 @property NSString* publicationDate;
+@property NSURL* imageURL;
 
 @end

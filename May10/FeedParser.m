@@ -105,8 +105,30 @@
             entry.contentArray = [[NSMutableArray alloc]init];
         }
         
+        if([self string:contentString containsString:@"<img class=\"left\" src=\""]){
+           
+            NSString* imageUrlString = [self removeHtmlCharactersFromCDATABlockContent:(NSString*) contentString];
+            NSLog(@"%@", imageUrlString);
+            entry.imageURL = [[NSURL alloc]initWithString:imageUrlString];
+        }
+        
         [entry.contentArray addObject:contentString];
     }
+}
+- (bool)string:(NSString*) string1 containsString:(NSString*) string2{
+    NSRange range = [string1 rangeOfString : string2];
+    
+    if (range.location != NSNotFound) {
+        return true;
+    }else{
+        return false;
+    }
+}
+-(NSString *) removeHtmlCharactersFromCDATABlockContent:(NSString*) dataString{
+    dataString = [dataString stringByReplacingOccurrencesOfString:@"<img class=\"left\" src=\"" withString:@""];
+    dataString = [dataString stringByReplacingOccurrencesOfString:@"\" /><br />" withString:@""];
+    
+    return dataString;
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{

@@ -14,10 +14,11 @@
 @synthesize contentArray;
 @synthesize link;
 @synthesize publicationDate;
+@synthesize imageURL;
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"\nTitle: %@ \n: %@\nContent = $@\nLink: %@\nPublication Date: %@", title, contentArray.description, link, publicationDate];
+    return [NSString stringWithFormat:@"\nTitle: %@\nImage URL: %@\nContent: $@\nLink: %@\nPublication Date: %@", title,  imageURL.description, contentArray.description, link, publicationDate];
 }
 
 @end
