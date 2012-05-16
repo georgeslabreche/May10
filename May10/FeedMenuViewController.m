@@ -25,7 +25,7 @@
     return self;
 }
 
--(id)initWithFeedContentlViewController: (FeedContentViewController *) viewController{
+-(id)init{
     self = [super initWithStyle:UITableViewCellStyleDefault];
     if (self) {
         feedMenuItems = [NSArray arrayWithObjects:
@@ -37,8 +37,6 @@
                          @"The Industry",
                          @"Clickables",
                          nil];
-        
-        feedContentViewController = viewController;
     }
     return self;
 }
@@ -191,18 +189,18 @@
         // Error, return empty array
         feeds = [[NSMutableArray alloc]init];
     }
-    
-    
-         
+  
     // Create the new feed content view controller
-    FeedContentViewController *nextFeedContentViewController = [[FeedContentViewController alloc] 
-                                                                initWithFeeds:feeds];
+    FeedContentViewController *feedContentViewController = [[FeedContentViewController alloc] initWithFeeds:feeds];
+    
+    // And its navigation view controller
+    UINavigationController *feedContentViewNavigationController = [[UINavigationController alloc]initWithRootViewController:feedContentViewController];
     
     
     // Update split view with new content
     NSArray *viewControllers = [NSArray arrayWithObjects:
                                                       self,
-                                                      nextFeedContentViewController,
+                                                      feedContentViewNavigationController,
                                                       nil
                                                       ];
     

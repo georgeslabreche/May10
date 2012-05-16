@@ -18,6 +18,7 @@
 		42B459C4155A1BA700282EFE /* FeedContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459C3155A1BA700282EFE /* FeedContentViewController.m */; };
 		42B459CA155A390200282EFE /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459C9155A390200282EFE /* Entry.m */; };
 		42B459CD155A3C7500282EFE /* FeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459CC155A3C7500282EFE /* FeedParser.m */; };
+		42C5832815634FDB009AF908 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C5832715634FDB009AF908 /* ArticleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		42B459C9155A390200282EFE /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		42B459CB155A3C7500282EFE /* FeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedParser.h; sourceTree = "<group>"; };
 		42B459CC155A3C7500282EFE /* FeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedParser.m; sourceTree = "<group>"; };
+		42C5832615634FDB009AF908 /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
+		42C5832715634FDB009AF908 /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				42B459C9155A390200282EFE /* Entry.m */,
 				42B459CB155A3C7500282EFE /* FeedParser.h */,
 				42B459CC155A3C7500282EFE /* FeedParser.m */,
+				42C5832615634FDB009AF908 /* ArticleViewController.h */,
+				42C5832715634FDB009AF908 /* ArticleViewController.m */,
 			);
 			path = May10;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				42B459C4155A1BA700282EFE /* FeedContentViewController.m in Sources */,
 				42B459CA155A390200282EFE /* Entry.m in Sources */,
 				42B459CD155A3C7500282EFE /* FeedParser.m in Sources */,
+				42C5832815634FDB009AF908 /* ArticleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

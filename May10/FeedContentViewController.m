@@ -7,6 +7,7 @@
 //
 
 #import "FeedContentViewController.h"
+#import "ArticleViewController.h"
 #import "Entry.h"
 
 @interface FeedContentViewController ()
@@ -39,6 +40,9 @@
     [super viewDidLoad];
     
     self.tableView.rowHeight = 200;
+    
+    //[self.navigationController setNavigationBarHidden:YES];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -82,8 +86,6 @@
 	}
     
     // Configure the cell...
-	//The .textLabel and .detailTextLabel properties are UILabels.
-	//The .imageView property is a UIImage.
     Entry *entry = [vultureFeeds objectAtIndex: indexPath.row];
     
 	cell.textLabel.text = entry.title;
@@ -140,15 +142,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // get selected entry
+    Entry *entry = [vultureFeeds objectAtIndex: indexPath.row];
     
+    NSLog(@"Selected article: %@", entry.title);
     
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    // Build view controller that will display the entry's article content
+    ArticleViewController *articleViewController = [[ArticleViewController alloc]initWithHtmlContent:entry.articleContent];
+    
+    // Load article view.
+    [self.navigationController pushViewController:articleViewController animated:YES];
+    
+    // Show navigation bar when displaying article in web view.
+    // This is so that the user can easily got back to the table view
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 @end

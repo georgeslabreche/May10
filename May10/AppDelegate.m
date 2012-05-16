@@ -26,16 +26,17 @@
     
     // This is the Detail View Controller for the Split View Controller
     FeedContentViewController *feedContentViewController = [[FeedContentViewController alloc] initWithFeeds:feeds];
-    
+    UINavigationController *feedContentViewNavigationController =[[UINavigationController alloc]initWithRootViewController:feedContentViewController];
     
     // This is the MAster View Controller for the Split View Controller
-    FeedMenuViewController *feedMenuViewController = [[FeedMenuViewController alloc] initWithFeedContentlViewController:feedContentViewController];
+    FeedMenuViewController *feedMenuViewController = [[FeedMenuViewController alloc] init];
+    
     
     vultureFeedSplitViewController = [[VultureFeedSplitViewController alloc] init];
     
     vultureFeedSplitViewController.viewControllers = [NSArray arrayWithObjects:
                                            feedMenuViewController,
-                                           feedContentViewController,
+                                           feedContentViewNavigationController,
                                            nil
                                            ];
     
