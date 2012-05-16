@@ -39,7 +39,7 @@
 {
     [super viewDidLoad];
     
-    self.tableView.rowHeight = 200;
+    self.tableView.rowHeight = 100;
     
     //[self.navigationController setNavigationBarHidden:YES];
     
@@ -148,7 +148,7 @@
     NSLog(@"Selected article: %@", entry.title);
     
     // Build view controller that will display the entry's article content
-    ArticleViewController *articleViewController = [[ArticleViewController alloc]initWithHtmlContent:entry.articleContent];
+    ArticleViewController *articleViewController = [[ArticleViewController alloc]initWithArticleEntry:entry];
     
     // Load article view.
     [self.navigationController pushViewController:articleViewController animated:YES];

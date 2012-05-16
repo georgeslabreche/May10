@@ -13,7 +13,9 @@
 }
 @property NSString* title;
 @property NSString* author;
-@property NSString* articleContent;
+@property NSString* imageHtmlContent;
+@property NSString* articleHtmlContent;
+@property NSString* readMoreByHtmlContent;
 
 @property NSString* link;
 @property NSString* publicationDate;

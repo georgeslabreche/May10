@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Entry.h"
 
 @interface ArticleViewController : UIViewController{
-    NSString *htmlContent;
+    Entry *articleEntry;
 }
 
 
--(id) initWithHtmlContent:(NSString *) content;
+-(id) initWithArticleEntry:(Entry *) entry;
 
 @end

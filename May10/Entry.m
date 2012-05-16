@@ -12,7 +12,9 @@
 
 @synthesize title;
 @synthesize author;
-@synthesize articleContent;
+@synthesize imageHtmlContent;
+@synthesize articleHtmlContent;
+@synthesize readMoreByHtmlContent;
 
 @synthesize link;
 @synthesize publicationDate;

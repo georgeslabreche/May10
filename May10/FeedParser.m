@@ -243,13 +243,14 @@
         // if content block is primary image url content block
         if([self string:contentString containsString:@"<img class=\"left\" src=\""]){
            
+            entry.imageHtmlContent = contentString;
             NSString* imageUrlString = [self removeHtmlCharactersFromCDATABlockContent:(NSString*) contentString];
             entry.imageURL = [[NSURL alloc]initWithString:imageUrlString];
         }
         
         // if content block is "Read more posts by" content block
         else if([self string:contentString containsString:@"<p>Read more posts by <a href=\"http://nymag.com/author/"]){
-            // Do nothing in this case for now.
+            entry.readMoreByHtmlContent = contentString;
         }
         
         // if content block is "Filed Under" content block
@@ -287,7 +288,7 @@
         
         // Last case is that content block is actual article textual content block
         else{
-            entry.articleContent = contentString;
+            entry.articleHtmlContent = contentString;
         }
         
         //[entry.contentArray addObject:contentString];

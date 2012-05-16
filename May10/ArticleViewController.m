@@ -23,10 +23,10 @@
     return self;
 }
 
--(id) initWithHtmlContent:(NSString *) content{
+-(id) initWithArticleEntry:(Entry *) entry{
     self = [super initWithNibName:nil bundle:nil];
     if(self){
-        htmlContent = content;
+        articleEntry = entry;
     }
     return self;
 }
@@ -37,7 +37,14 @@
     
 	// Build web view with article HTML content retrieved from the feed url.
     UIWebView *webView = [[UIWebView alloc]init];
-    [webView loadHTMLString:htmlContent baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+    
+    NSMutableString *fullHtmlArticleContent = [NSMutableString stringWithString: @""];
+    
+    [fullHtmlArticleContent appendString: articleEntry.imageHtmlContent];
+    [fullHtmlArticleContent appendString: articleEntry.articleHtmlContent];
+    [fullHtmlArticleContent appendString: articleEntry.readMoreByHtmlContent];
+    
+    [webView loadHTMLString:fullHtmlArticleContent baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
     
     // Assign the web view to this controller.
     self.view = webView;
