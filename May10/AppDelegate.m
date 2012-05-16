@@ -24,9 +24,11 @@
     feedParser = [[FeedParser alloc]init];
     NSMutableArray *feeds = [feedParser fetchAllNews];
     
-    // This is the Detail View Controller for the Split View Controller
-    FeedContentViewController *feedContentViewController = [[FeedContentViewController alloc] initWithFeeds:feeds];
-    UINavigationController *feedContentViewNavigationController =[[UINavigationController alloc]initWithRootViewController:feedContentViewController];
+    // Build Detail View Controller.
+    FeedContentViewController *feedContentViewController = [[FeedContentViewController alloc] init];
+    feedContentViewController.vultureFeeds = feeds;
+    
+    UINavigationController *feedContentNavigationController =[[UINavigationController alloc]initWithRootViewController:feedContentViewController];
     
     // This is the MAster View Controller for the Split View Controller
     FeedMenuViewController *feedMenuViewController = [[FeedMenuViewController alloc] init];
@@ -36,7 +38,7 @@
     
     vultureFeedSplitViewController.viewControllers = [NSArray arrayWithObjects:
                                            feedMenuViewController,
-                                           feedContentViewNavigationController,
+                                           feedContentNavigationController,
                                            nil
                                            ];
     

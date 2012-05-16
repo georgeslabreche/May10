@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VultureFeedSplitViewController : UISplitViewController
+@interface VultureFeedSplitViewController : UISplitViewController<UISplitViewControllerDelegate>{
+
+}
 
 @end

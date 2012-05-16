@@ -15,21 +15,22 @@
 @end
 
 @implementation FeedContentViewController
+@synthesize vultureFeeds;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-
     }
     return self;
 }
 
 
-- (id)initWithFeeds:(NSMutableArray *) feeds{
+- (id)init{
     self = [super initWithStyle:UITableViewCellStyleDefault];
     if (self) {
-        vultureFeeds = feeds;
+
     }
     
     return self;

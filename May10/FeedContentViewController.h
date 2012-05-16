@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedContentViewController : UITableViewController{
-    NSArray *vultureFeeds;
+    
 }
-- (id)initWithFeeds:(NSMutableArray *) feeds;
+@property NSArray *vultureFeeds;
+
 @end
