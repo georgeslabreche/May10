@@ -12,9 +12,20 @@
     
 }
 @property NSString* title;
-@property NSMutableArray* contentArray;
+@property NSString* author;
+@property NSString* articleContent;
+
 @property NSString* link;
 @property NSString* publicationDate;
-@property NSURL* imageURL;
+@property (retain, nonatomic) NSURL* imageURL;
+@property (retain, nonatomic) NSURL* articleURL;
+
+@property bool isMovieNews;
+@property bool isTvNews;
+@property bool isMusicNews;
+@property bool isArtNews;
+@property bool isBooksNews;
+@property bool isIndustryNews;
+@property bool isClickablesNews;
 
 @end

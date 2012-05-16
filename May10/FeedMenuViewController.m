@@ -150,24 +150,49 @@
     // Get delegage. We need to operate on objects in the delegate
     AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
     
+    
     // This array will contain the feed to display
-    NSMutableArray *feeds;
+    feeds = nil;
     
     // Fetch required feed.
     NSString *selectedFeed = [feedMenuItems objectAtIndex: indexPath.row];
     NSLog(@"Fetch and display %@ feed.", selectedFeed);
     
+    
     if(indexPath.row == 0){
-        NSLog(@"Fetch news feed...");
+        NSLog(@"Fetch all news feed...");
         feeds = delegate.feedParser.fetchAllNews; 
         
     }else if(indexPath.row == 1){
-        NSLog(@"Fetch news feed...");
+        NSLog(@"Fetch Movies news feed...");
         feeds = delegate.feedParser.fetchMovies;
+        
+    }else if(indexPath.row == 2){
+        NSLog(@"Fetch TV news feed...");
+        feeds = delegate.feedParser.fetchTV;
+        
+    }else if(indexPath.row == 3){
+        NSLog(@"Fetch Music news feed...");
+        feeds = delegate.feedParser.fetchMusic;
+        
+    }else if(indexPath.row == 4){
+        NSLog(@"Fetch Art and Books news feed...");
+        feeds = delegate.feedParser.fetchArtAndBooks;
+        
+    }else if(indexPath.row == 5){
+        NSLog(@"Fetch The Industry news feed...");
+        feeds = delegate.feedParser.fetchIndustry;
+    
+    }else if(indexPath.row == 6){
+        NSLog(@"Fetch Clickables news feed...");
+        feeds = delegate.feedParser.fetchClickables;
     }
     else{
+        // Error, return empty array
         feeds = [[NSMutableArray alloc]init];
     }
+    
+    
          
     // Create the new feed content view controller
     FeedContentViewController *nextFeedContentViewController = [[FeedContentViewController alloc] 

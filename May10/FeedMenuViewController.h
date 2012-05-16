@@ -12,6 +12,7 @@
 @interface FeedMenuViewController : UITableViewController{
     NSArray *feedMenuItems;
     FeedContentViewController *feedContentViewController;
+    NSMutableArray *feeds;
 }
 -(id)initWithFeedContentlViewController: (FeedContentViewController *) viewController;
 @end
