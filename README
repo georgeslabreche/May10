@@ -2,3 +2,32 @@ Thursday, May 3, 2012:
 Up to Coverflow in the in-class examples. Try everything and do all the exercises. This app is based on this website. Write and upload a project named May10 that does something interesting. For example, make a Model object as well as a View and a Controller. Party after the last class?
 
 There’s all kinds of stuff you can read: view controllers in general, tab bar controllers or navigation controllers in particular. Look at tab bars, navigation bars, and modal views in the Human Interface Guidelines.
+
+-= What this app actually does =-
+
+It's an iPad app using split view:
+- It retrieves data online from the following feed URL: http://www.vulture.com/rss/index.xml
+- It parses the XML feed and categorizes vulture.com article content.
+- The master view is a table view of all the article categories.
+- The detail view is a table view of recently published articles from a category selected in the master view.
+- Selecting an article will in the detail view's table view will load that article content into a web view. It's a web view because the content is formatted in HTML.
+- There is navigation control on the detail view.
+- If you rotate the device to portrait mode, the master view disappears and a navigation bar buttun appears to access an alternative menu.
+
+-= Concepts explored =-
+
+- UISplitViewController
+- Managing hiding and showing master view when rotating device by implementing methods of the UISplitViewControllerDelegate protocol.
+- Using UIBarButtonItem for a view that has UINavigationControl associated to it. This is used to access category menu when iPad is Portrait mode. 
+- Parsing XML with NSXMLParserDelegate
+- UIWebView and loading html content that's stored in an NSString.
+- Operating on NSString to do replace or contains.
+
+-= Concepts to explore =-
+
+- Parsing JSON.
+- Caching content already parsed instead of reparsing every time.
+- Use UIPopoverController instead of UIBarButtonItem to access a category menu when the iPad is in Portrait orientation.
+
+
+   
