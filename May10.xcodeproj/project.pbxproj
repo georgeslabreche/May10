@@ -13,8 +13,9 @@
 		4203E2B71558C5E60015EC11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4203E2B51558C5E60015EC11 /* InfoPlist.strings */; };
 		4203E2B91558C5E60015EC11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E2B81558C5E60015EC11 /* main.m */; };
 		4203E2BD1558C5E60015EC11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E2BC1558C5E60015EC11 /* AppDelegate.m */; };
+		424A253F156DFF7C0010E161 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 424A253E156DFF7C0010E161 /* MasterViewController.m */; };
+		424A2542156E02520010E161 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 424A2541156E02520010E161 /* Images */; };
 		42B459BB155A11D600282EFE /* VultureFeedSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459BA155A11D600282EFE /* VultureFeedSplitViewController.m */; };
-		42B459BE155A13CD00282EFE /* FeedMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459BD155A13CD00282EFE /* FeedMenuViewController.m */; };
 		42B459C4155A1BA700282EFE /* FeedContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459C3155A1BA700282EFE /* FeedContentViewController.m */; };
 		42B459CA155A390200282EFE /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459C9155A390200282EFE /* Entry.m */; };
 		42B459CD155A3C7500282EFE /* FeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B459CC155A3C7500282EFE /* FeedParser.m */; };
@@ -32,10 +33,11 @@
 		4203E2BA1558C5E60015EC11 /* May10-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "May10-Prefix.pch"; sourceTree = "<group>"; };
 		4203E2BB1558C5E60015EC11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4203E2BC1558C5E60015EC11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		424A253D156DFF7C0010E161 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		424A253E156DFF7C0010E161 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		424A2541156E02520010E161 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		42B459B9155A11D600282EFE /* VultureFeedSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VultureFeedSplitViewController.h; sourceTree = "<group>"; };
 		42B459BA155A11D600282EFE /* VultureFeedSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VultureFeedSplitViewController.m; sourceTree = "<group>"; };
-		42B459BC155A13CD00282EFE /* FeedMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedMenuViewController.h; sourceTree = "<group>"; };
-		42B459BD155A13CD00282EFE /* FeedMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedMenuViewController.m; sourceTree = "<group>"; };
 		42B459C2155A1BA700282EFE /* FeedContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedContentViewController.h; sourceTree = "<group>"; };
 		42B459C3155A1BA700282EFE /* FeedContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedContentViewController.m; sourceTree = "<group>"; };
 		42B459C8155A390200282EFE /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
@@ -95,8 +97,6 @@
 				4203E2B31558C5E60015EC11 /* Supporting Files */,
 				42B459B9155A11D600282EFE /* VultureFeedSplitViewController.h */,
 				42B459BA155A11D600282EFE /* VultureFeedSplitViewController.m */,
-				42B459BC155A13CD00282EFE /* FeedMenuViewController.h */,
-				42B459BD155A13CD00282EFE /* FeedMenuViewController.m */,
 				42B459C2155A1BA700282EFE /* FeedContentViewController.h */,
 				42B459C3155A1BA700282EFE /* FeedContentViewController.m */,
 				42B459C8155A390200282EFE /* Entry.h */,
@@ -105,6 +105,8 @@
 				42B459CC155A3C7500282EFE /* FeedParser.m */,
 				42C5832615634FDB009AF908 /* ArticleViewController.h */,
 				42C5832715634FDB009AF908 /* ArticleViewController.m */,
+				424A253D156DFF7C0010E161 /* MasterViewController.h */,
+				424A253E156DFF7C0010E161 /* MasterViewController.m */,
 			);
 			path = May10;
 			sourceTree = "<group>";
@@ -112,6 +114,7 @@
 		4203E2B31558C5E60015EC11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				424A2541156E02520010E161 /* Images */,
 				4203E2B41558C5E60015EC11 /* May10-Info.plist */,
 				4203E2B51558C5E60015EC11 /* InfoPlist.strings */,
 				4203E2B81558C5E60015EC11 /* main.m */,
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4203E2B71558C5E60015EC11 /* InfoPlist.strings in Resources */,
+				424A2542156E02520010E161 /* Images in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,11 +188,11 @@
 				4203E2B91558C5E60015EC11 /* main.m in Sources */,
 				4203E2BD1558C5E60015EC11 /* AppDelegate.m in Sources */,
 				42B459BB155A11D600282EFE /* VultureFeedSplitViewController.m in Sources */,
-				42B459BE155A13CD00282EFE /* FeedMenuViewController.m in Sources */,
 				42B459C4155A1BA700282EFE /* FeedContentViewController.m in Sources */,
 				42B459CA155A390200282EFE /* Entry.m in Sources */,
 				42B459CD155A3C7500282EFE /* FeedParser.m in Sources */,
 				42C5832815634FDB009AF908 /* ArticleViewController.m in Sources */,
+				424A253F156DFF7C0010E161 /* MasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

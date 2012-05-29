@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "VultureFeedSplitViewController.h"
-#import "FeedMenuViewController.h"
+#import "MasterViewController.h"
 #import "FeedContentViewController.h"
 #import "FeedParser.h"
 
@@ -31,13 +31,12 @@
     UINavigationController *feedContentNavigationController =[[UINavigationController alloc]initWithRootViewController:feedContentViewController];
     
     // This is the MAster View Controller for the Split View Controller
-    FeedMenuViewController *feedMenuViewController = [[FeedMenuViewController alloc] init];
-    
+    MasterViewController *masterViewController = [[MasterViewController alloc] init];
     
     vultureFeedSplitViewController = [[VultureFeedSplitViewController alloc] init];
     
     vultureFeedSplitViewController.viewControllers = [NSArray arrayWithObjects:
-                                           feedMenuViewController,
+                                           masterViewController,
                                            feedContentNavigationController,
                                            nil
                                            ];

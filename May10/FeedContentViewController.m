@@ -40,7 +40,12 @@
 {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     self.tableView.rowHeight = 100;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.topItem.title = @"All News";
     
     //[self.navigationController setNavigationBarHidden:YES];
     
@@ -157,6 +162,9 @@
     // Show navigation bar when displaying article in web view.
     // This is so that the user can easily got back to the table view
     [self.navigationController setNavigationBarHidden:NO];
+    
+    // title of article is navigation bar top item title
+    self.navigationController.navigationBar.topItem.title = entry.title;
 }
 
 @end

@@ -1,34 +1,36 @@
 //
-//  FeedMenuViewController.m
+//  MasterViewController.m
 //  May10
 //
-//  Created by Georges Labreche on 5/8/12.
+//  Created by Georges Labreche on 5/24/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "FeedMenuViewController.h"
+#import "MasterViewController.h"
+#import "FeedContentViewController.h"
 #import "AppDelegate.h"
 
-@interface FeedMenuViewController ()
+@interface MasterViewController ()
 
 @end
 
-@implementation FeedMenuViewController
+@implementation MasterViewController
+@synthesize feedCategoriesTableView;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        // Custom initialization
     }
     return self;
 }
 
 -(id)init{
-    self = [super initWithStyle:UITableViewCellStyleDefault];
-    if (self) {
-        self.title = @"Feeds";
-        
+    
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {        
+
         feedMenuItems = [NSArray arrayWithObjects:
                          @"All News",
                          @"Movies",
@@ -38,29 +40,41 @@
                          @"The Industry",
                          @"Clickables",
                          nil];
-        
     }
     return self;
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+	
+    // load vulture feed logo view
+    UIImage *vultureFeedImage = [UIImage imageNamed:@"Images/feed.png"];
+    UIImageView *vultureFeedImageView = [[UIImageView alloc]initWithImage:vultureFeedImage];
+    vultureFeedImageView.contentMode = UIViewContentModeTop;
+    
+    [self.view addSubview: vultureFeedImageView];
+    
+    // Load feed categories table view
+    CGRect feedCategoriesTableViewBounds = CGRectMake(0, vultureFeedImageView.bounds.size.height, vultureFeedImageView.bounds.size.width, self.view.bounds.size.height);
+    
+    self.feedCategoriesTableView = [[UITableView alloc]initWithFrame:feedCategoriesTableViewBounds style:UITableViewStylePlain];
+    self.feedCategoriesTableView.delegate = self;
+    self.feedCategoriesTableView.dataSource = self;
+    
+    [self.view addSubview: feedCategoriesTableView];
+    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	return YES;
@@ -71,82 +85,51 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    NSInteger result = 0;
+    
+    if([tableView isEqual:self.feedCategoriesTableView]){
+        result = 1;
+    }
+    
+    return result;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return feedMenuItems.count;
+    NSUInteger result = 0;
+    
+    if([tableView isEqual:self.feedCategoriesTableView]){
+        result = feedMenuItems.count;
+    }
+    
+    return result;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"Feeds";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-
-    // Configure the cell...
-    if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellIdentifier];
-	}
+    UITableViewCell *cell = nil;
     
-    // Configure the cell...
-	//The .textLabel and .detailTextLabel properties are UILabels.
-	//The .imageView property is a UIImage.
-	cell.textLabel.text = [feedMenuItems objectAtIndex: indexPath.row];
-    
-    //TODO: Background image
-    //NSString *fileName = [cell.textLabel.text stringByAppendingString: @".jpg"];
-	//cell.imageView.image = [UIImage imageNamed: fileName];	//nil if .jpg file doesn't exist
+    if([tableView isEqual:self.feedCategoriesTableView]){
+        static NSString *cellIdentifier = @"Feeds";
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellIdentifier];
+        }
+        cell.textLabel.text = [feedMenuItems objectAtIndex: indexPath.row];
+        
+    }
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-   
+    
     // Get delegage. We need to operate on objects in the delegate
     AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
     
@@ -175,7 +158,7 @@
         
     }else if(indexPath.row == 5){
         feeds = delegate.feedParser.fetchIndustry;
-    
+        
     }else if(indexPath.row == 6){
         feeds = delegate.feedParser.fetchClickables;
     }
@@ -183,7 +166,7 @@
         // Error, return empty array
         feeds = [[NSMutableArray alloc]init];
     }
-  
+    
     // Reload content view because we have new feeds
     UINavigationController *feedContentNavigationController = [delegate.vultureFeedSplitViewController.viewControllers objectAtIndex:1];
     
@@ -192,7 +175,8 @@
     feedContentViewController.vultureFeeds = feeds;
     
     [feedContentViewController.tableView reloadData];
+    feedContentViewController.navigationController.navigationBar.topItem.title = selectedFeed;
     
 }
-
 @end
+
